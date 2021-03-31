@@ -1,8 +1,8 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+<!--  <div id="nav">-->
+<!--&lt;!&ndash;    <router-link to="/">Home</router-link> |&ndash;&gt;-->
+<!--&lt;!&ndash;    <router-link to="/about">About</router-link>&ndash;&gt;-->
+<!--  </div>-->
   <router-view/>
 </template>
 
@@ -27,4 +27,9 @@
     }
   }
 }
+
+body{
+  margin: 0;
+}
+
 </style>
