@@ -1,35 +1,77 @@
 <template>
-<!--  <div id="nav">-->
-<!--&lt;!&ndash;    <router-link to="/">Home</router-link> |&ndash;&gt;-->
-<!--&lt;!&ndash;    <router-link to="/about">About</router-link>&ndash;&gt;-->
-<!--  </div>-->
-  <router-view/>
+  <img alt="Vue logo" src="./assets/logo.png">
+  <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
-<style lang="scss">
+<script>
+import HelloWorld from './components/HelloWorld.vue'
+import {
+  onBeforeMount,
+  onMounted,
+  onBeforeUpdate,
+  onUpdated,
+  onBeforeUnmount,
+  onUnmounted,
+  onErrorCaptured,
+  onRenderTracked,
+  onRenderTriggered,
+} from 'vue'
+
+export default {
+  name: 'App',
+  components: {
+    HelloWorld
+  },
+
+  setup(){
+    onBeforeMount(() => {
+      console.log("onBeforeMount")
+    })
+
+    onMounted(() => {
+      console.log("onMounted")
+    })
+
+    onBeforeUpdate(() => {
+      console.log("onBeforeUpdate")
+    })
+
+    onUpdated(() => {
+      console.log("onUpdated")
+    })
+
+    onBeforeUnmount(() => {
+      console.log("onBeforeUnmount")
+    })
+
+    onUnmounted(() => {
+      console.log("onUnmounted")
+    })
+
+    onErrorCaptured(err => {
+      console.log(err)
+    })
+
+    onRenderTracked(obj => {
+      console.log(obj)
+    })
+
+    onRenderTriggered(obj => {
+      console.log(obj)
+    })
+
+    console.log("onSetup")
+  }
+}
+</script>
+
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-
-body{
-  margin: 0;
-}
-
 </style>
